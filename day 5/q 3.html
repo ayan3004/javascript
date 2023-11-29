@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="">principal amout</label>
+        <br>
+        <input type="text" placeholder="principal amout" id="i1">
+        <br><br>
+
+        <label for="">rate of interest</label>
+        <br>
+        <input type="text" placeholder="rate of interest" id="i2">
+        <br><br>
+
+        <label for="">time period</label>
+        <br>
+        <input type="text" placeholder="time period" id="i3">
+        <br><br>
+    </center>
+
+    <center>
+        <h1 id="oll"></h1>
+    </center>
+    
+</body>
+</html>
+
+<script>
+    let a= document.getElementById("i1").value;
+    let b= document.getElementById("i2").value;
+    let c= document.getElementById("i3").value;
+
+    let ans = a*b*c /100;
+
+    document.getElementById("oll").innerHTML="simple interst =" +ans;
+</script>

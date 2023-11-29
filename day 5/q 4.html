@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <center>
+            <label for="">
+                Basic salary
+            </label><br>
+            <input type="text" placeholder="Enter Basic salary " id="i1"><br>
+            <label for="">
+                Bonus amount
+            </label><br>
+            <input type="text" placeholder="Enter Bonus amount " id="i2"><br>
+            <label for="">
+                Housing allowance
+
+            </label><br>
+            <input type="text" placeholder="Enter Housing allowance" id="i3"><br>
+            <label for="">
+                Deducted paid leave days
+            </label><br>
+            <input type="text" placeholder="Enter Deducted paid leave days" id="i4"><br>
+            <label for="">
+                 Deducted income tax
+
+            </label><br>
+            <input type="text" placeholder="Enter Deducted income tax" id="i5"><br>
+            <label for="">
+                Deducted medical insurance
+            </label><br>
+            <input type="text" placeholder="Enter Deducted medical insurance" id="i6"><br>
+            <label for="">
+                Deducted Provident Fund
+            </label><br>
+            <input type="text" placeholder="Enter Deducted Provident Fund" id="i7"><br>
+        </center>
+    </fieldset>
+    <h1 id="ans">ans </h1>
+</body>
+
+</html>
+<script>
+    let a = document.getElementById("i1").value
+    let b = document.getElementById("i2").value
+    let c = document.getElementById("i3").value
+    let d = document.getElementById("i4").value
+    let e = document.getElementById("i5").value
+    let f = document.getElementById("i6").value
+    let g = document.getElementById("i7").value
+
+    let salary = +a+ +b+ +c-+d-+e-+f-+g
+    document.getElementById("ans").innerText='your salary is' +salary
+</script>

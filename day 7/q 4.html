@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Charactor :- </label>&nbsp;&nbsp;
+    <input type="text" name="" id="char">
+
+    <h1 id="ans"></h1>
+</body>
+</html>
+
+<script>
+    let char = document.getElementById("char").value
+if(char=="")
+{
+    document.write("")
+}
+else{
+    if(char === "a" || char === "e" || char === "i" || char === "o" || char === "u" ||char === "A" || char === "E" || char === "I" || char === "O" || char === "U"     ){
+        document.write("Vowel") 
+    }
+    else{
+        document.write("Not a Vowel")
+    }
+    
+}
+</script>

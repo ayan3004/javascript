@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label>Enter the first value</label><br>
+        <input type="text" placeholder="first value" id="i1"><br>
+        <label>Enter second value</label><br>
+        <input type="text" placeholder="second value" id="i2"><br>
+        <label>Enter third value</label><br>
+        <input type="text" placeholder="Enterthird value" id="i3"><br>
+        <label>Enter fourth value</label><br>
+        <input type="text" placeholder="Enter fourth value" id="i4"><br>
+    </center>
+    <h1>Before</h1>
+    <h2 id="box-1"></h2>
+    <h2 id="box-2"></h2>
+    <h2 id="box-3"></h2>
+    <h2 id="box-4"></h2>
+    <h1>After</h1>
+    <h2 id="b1"></h2>
+    <h2 id="b2"></h2>
+    <h2 id="b3"></h2>
+    <h2 id="b4"></h2>
+</body>
+</html>
+<script>
+    let a = document.getElementById("i1").value
+    let b = document.getElementById("i2").value
+    let c = document.getElementById("i3").value
+    let d = document.getElementById("i4").value
+
+    document.getElementById("box-1").innerText=a
+    
+    document.getElementById("box-2").innerText=b
+    
+    document.getElementById("box-3").innerText=c
+    
+    document.getElementById("box-4").innerText=d
+
+    document.getElementById("b1").innerText=b
+    
+    document.getElementById("b2").innerText=a
+    
+    document.getElementById("b3").innerText=d
+    
+    document.getElementById("b4").innerText=c
+
+
+
+
+
+
+</script>

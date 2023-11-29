@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Number :- </label>&nbsp;&nbsp;
+    <input type="text" name="" id="num">
+
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+    let num = document.getElementById("num").value
+if(num=="")
+{
+    document.write("")
+}
+else if(num % 5 == 0 && num % 7 == 0){
+    document.write("Divisible by both 5 and 7") 
+}
+else{
+    document.write("Not Divisible by both 5 and 7")    
+}
+</script>
+
