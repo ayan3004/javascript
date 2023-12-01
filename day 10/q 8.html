@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter any value</label><br>
+    <input type="text" placeholder="enter value" id="val">
+    <h1 id="ans"></h1>
+</body>
+
+</html>
+<script>
+    let a = document.getElementById("val").value
+if(a==""){
+    document.getElementById("ans").innerHTML="enter any number"
+}
+else{
+
+    if(a > 0){
+        document.getElementById("ans").innerHTML="This value is positive"
+    }
+    else if( a< 0){
+        document.getElementById("ans").innerHTML="This value is negative"
+    }
+    else if(a==0){
+        document.getElementById("ans").innerHTML="This is zero"
+    }
+}
+
+</script>
