@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<body>
+
+    <h1>Language Select : </h1>
+
+    <p>Enter English' display 'Hello!'</p>
+    <p>Enter 'Spanish', display 'Hola!'.</p>
+    <p>Enter 'French', print 'Bonjour!</p>
+   
+
+    <input type="text" id="in">
+
+    <h1 id="ans"></h1>
+    
+</body>
+</html>
+
+<script>
+    let lan = document.getElementById("in").value 
+
+
+
+switch(lan){
+    case 'English' : document.getElementById("ans").innerHTML = "Hello"
+
+    break;
+
+    case 'Spanish' : document.getElementById("ans").innerHTML = "Hola"
+    break;
+
+    case 'French' : document.getElementById("ans").innerHTML = "Bonjour"
+    break;
+
+    default : document.getElementById("ans").innerHTML = "Language Not suppoted"
+
+}
+</script>

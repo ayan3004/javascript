@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter number</label>
+    <input type="text" id="in"><br>
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+    let day = document.getElementById("in").value
+    let dayname;
+     switch(parseInt(day)){
+        case 1 : dayname = 'MONDAY'
+        dayname+= 'It is the start of the workweek'
+        break;
+        case 2 : dayname ='TUESDAY'
+        dayname+= 'It is some other day.'
+        break;
+        case 3 : dayname ='WEDNESDAY'
+        dayname+= 'It is some other day.'
+        break;
+        case 4 : dayname ='THURSDAY'
+        dayname+= 'It is some other day.'
+        break;
+        case 5 : dayname ='FRIDAY'
+        dayname+= 'It Is almost the weekend!'
+        break;
+        case 6 : dayname ='SATURDAY'
+        dayname+= 'It Is  the weekend!'
+        break;
+        case 7 : dayname ='SUNDAY'
+        dayname+= 'It Is the weekend!'
+        break;
+        default : dayname = 'Enter valid number'
+        
+        
+     }
+console.log(dayname);
+
+
+</script>
