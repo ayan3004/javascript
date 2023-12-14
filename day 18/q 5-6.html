@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Number :-</label><br>
+    <input type="text" id="in">
+</body>
+</html>
+<script>
+   let num = document.getElementById("in").value 
+    let fact = 1
+
+let factorial = function(num){
+    for(i = 1 ; i <= num ; i++){
+        fact *= i
+    }
+    return "Factorial of a NUmber "+num+ " ="+" "+parseInt(fact)
+}
+
+
+console.log(factorial(num))
+</script>
