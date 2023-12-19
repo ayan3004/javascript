@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let words = ['mkjjkn','ksksk','sdewwww','wewew','yyk']
+
+let lengthOfWords = words.map((el)=>{
+    return el.length
+})
+
+let ans = lengthOfWords.filter((len)=>{
+    return len % 2 != 0
+})
+
+console.log(ans)
+</script>
