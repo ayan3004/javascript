@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    let book = [
+        {
+            title : "Adventures of Tom Sawyer",
+            author : "Mark Twain",
+            price : 50,
+            quantityAvailable : 0 
+        },
+        {
+            title : "Ben Hur",
+            author : "Lewis Wallace",
+            price : 920,
+            quantityAvailable : 0
+        },
+        {
+            title : "Anand Math",
+            author : "Bankimchandra Chattopadhyay",
+            price : 40,
+            quantityAvailable : 3
+        },
+        {
+            title : "Gulliver’s Travels",
+            author : "Jonathan Swift",
+            price : 240,
+            quantityAvailable : 7
+        },
+        {
+            title : "The Moon and Sixpence",
+            author : "Somerset Maughan",
+            price : 30,
+            quantityAvailable : 8
+        },
+    ]
+
+    let array = []
+    for(let i in book)
+    {
+        if(book[i].price < 60 && book[i].quantityAvailable != 0)
+        {
+            array.push(book[i].title)
+        }
+    }
+    console.log(array)
+
+</script>
