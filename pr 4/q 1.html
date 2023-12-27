@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let book =[
+        {title:"Irrfan Khan: A Life in Movies",
+     author:"Shubhra Gupta",
+     year:2002},
+     {title:"Breaking Barriers: the Story of a Dalit Chief Secretary",
+     author:"Kaki Madhava Rao",
+     year:1998},
+     {title:"Human Anatomy",
+     author:"Dr. Ashvini Kumar Dwivedi",
+     year:2003},
+     {title:"Njaan Sakshi",
+     author:"Ruskin Bond",
+     year:1999},
+]
+
+        
+        let arry=[];
+        
+        for(let i in book)
+        {
+            if(book[i].year<2000)
+            {
+                arry.push(book[i].title)
+            }
+        }
+        console.log(arry)
+        
+ 
+</script>
