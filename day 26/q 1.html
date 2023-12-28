@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Everyone</h1>
+    <h1>Hello Everyone</h1>
+    <h1>Hello Everyone</h1>
+    <h1>Hello Everyone</h1>
+    <h3>Hello Everyone</h3>
+    <h3>Hello Everyone</h3>
+    <h3>Hello Everyone</h3>
+    <h3>Hello Everyone</h3>
+    <h5>Hello Everyone</h5>
+    <h5>Hello Everyone</h5>
+    <h5>Hello Everyone</h5>
+    <h5>Hello Everyone</h5>
+    <h2 class="green">Hello Everyone</h2>
+    <h2 class="green">Hello Everyone</h2>
+
+    <h2 class="blue">Hello Everyone</h2>
+    <h2 class="blue">Hello Everyone</h2>
+
+    <h2 class="red">Hello Everyone</h2>
+    <h2 class="red">Hello Everyone</h2>
+
+    <hr><hr>
+    <button id="btn1">click here to change color of h1</button>
+    <button id="btn2">click here to change color of h3</button>
+    <button id="btn3">click here to change color of h5</button>
+    <button id="btn4">click here to change color green </button>
+    <button id="btn5">click here to change color blue </button>
+    <button id="btn6">click here to change color red </button>
+</body>
+</html>
+<script>
+    document.getElementById("btn1").addEventListener('click',chb)
+   
+    
+    function chb(){
+        let heading1=document.querySelector('h1')
+        heading1.style.color="red"
+        
+    }
+    
+    document.getElementById("btn2").addEventListener('click',cha) 
+       
+    function cha(){
+    let head = document.querySelectorAll('h3')
+
+        for(let i=0 ; i<head.length;i++){
+            head[i].style.color="green"
+        }
+    }
+    
+    document.getElementById("btn3").addEventListener('click',chan) 
+       
+       function chan(){
+       let headr = document.querySelectorAll('h5')
+   
+           for(let i=0 ; i<headr.length;i++){
+               headr[i].style.color="blue"
+           }
+       }
+       document.getElementById("btn4").addEventListener('click',chgg)
+    function chgg(){
+    let cg = document.querySelectorAll('.green')
+    for(i = 0 ; i < cg.length ; i++){
+        cg[i].style.color="green"
+    }
+}
+document.getElementById("btn5").addEventListener('click',chgb)
+function chgb(){
+    let cb = document.querySelectorAll('.blue')
+    for(i = 0 ; i < cb.length ; i++){
+        cb[i].style.color="blue"
+    }
+}
+document.getElementById("btn6").addEventListener('click',chgr)
+function chgr(){
+    let cr = document.querySelectorAll('.red')
+    for(i = 0 ; i < cr.length ; i++){
+        cr[i].style.color="red"
+    }
+}
+      
+</script>
