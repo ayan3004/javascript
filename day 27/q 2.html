@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Age checker</h1>
+    <label for="">Enter your age</label><br>
+    <input type="text" id="in1">
+    <p id="ans"></p>
+    <hr>
+    <button id="opp">click here to check</button>
+</body>
+</html>
+<script>
+    document.getElementById("opp").addEventListener('click',agecheck)
+    function agecheck(){
+        let age = document.getElementById("in1").value
+
+        if(age<18){
+            document.getElementById("ans").innerHTML="You can't drive in India"
+        }
+        else if(age>18){
+            document.getElementById("ans").innerHTML="You can drive in India"
+ 
+        }
+        else if(age==18){
+            document.getElementById("ans").innerHTML="You are just old enough to drive in India!"
+
+        }
+    }
+</script>

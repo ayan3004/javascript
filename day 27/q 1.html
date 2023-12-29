@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="">Enter first value</label>
+        <input type="text" id="in1"><br><br>
+        
+        <label for="">Enter second value</label>
+        <input type="text" id="in2"><br><br>
+        
+        <label for="">Enter third value</label>
+        <input type="text" id="in3"><br><br>
+        
+        <label for="">Enter fourth value</label>
+        <input type="text" id="in4"><br><br>
+        <br><br>
+        <h1 id="ans"></h1>
+        <br><br><br>
+        <button onclick=sum()>click here for sum</button>
+        <button onclick=sub()>click here for sub</button>
+        <button onclick=mul()>click here for multiply</button>
+        <button onclick=div()>click here for div</button>
+    </center>
+</body>
+</html>
+<script>
+    function sum(){
+        let num1=document.getElementById("in1").value
+        let num2=document.getElementById("in2").value
+        let num3=document.getElementById("in3").value
+        let num4=document.getElementById("in4").value
+
+       let sum=+num1+ +num2+ +num3+ +num4
+       document.getElementById("ans").innerHTML="The sum of all number is :"+sum
+    }
+    
+    function sub(){
+        let num1=document.getElementById("in1").value
+        let num2=document.getElementById("in2").value
+        let num3=document.getElementById("in3").value
+        let num4=document.getElementById("in4").value
+
+       let sub=+num1- +num2- +num3- +num4
+       document.getElementById("ans").innerHTML="The substraction of all number is :"+sub
+    }
+    
+    function mul(){
+        let num1=document.getElementById("in1").value
+        let num2=document.getElementById("in2").value
+        let num3=document.getElementById("in3").value
+        let num4=document.getElementById("in4").value
+
+       let sum=+num1* +num2* +num3* +num4
+       document.getElementById("ans").innerHTML="The multiplition of all number is :"+sum
+    }
+    
+    function div(){
+        let num1=document.getElementById("in1").value
+        let num2=document.getElementById("in2").value
+        let num3=document.getElementById("in3").value
+        let num4=document.getElementById("in4").value
+
+       let sum=num1/num2
+       document.getElementById("ans").innerHTML="The divition of all number is :"+sum
+    }
+</script>
