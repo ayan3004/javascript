@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function checkemail(email){
+         if(!email.includes('@')){
+            throw new Error("please include '@")
+         }else{
+            console.log("email successful",email)
+         }
+    }
+    try{
+        checkemail("ayan.com")
+    }catch(e){
+        console.log("Error : ",e.message)
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function numcheck(value1,value2){
+        if(value2<0){
+            throw new Error("Number not divisible by 0")
+        }
+        else{
+            console.log("your number is ",value1,value2)
+        }
+    }
+    try{
+        numcheck(15,-3)
+    }
+    catch(e){
+     console.log("Error:",e.message)
+    }
+</script>
