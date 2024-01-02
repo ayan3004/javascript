@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="signup">
+        <label for="">Enter your name</label>
+        <input type="text" id="nm"><br><br>
+        <label for="">Enter your phone number</label>
+        <input type="text" id="numb"><br><br>
+        <label for="">Enter your email</label>
+        <input type="text" id="eml"><br><br>
+        <label for="">Enter your password</label>
+        <input type="password" id="pw"><br><br>
+        <label for="" >confirm password</label>
+        <input type="password" id="cpw"><br><br>
+        <button id="" type="submit">Submit</button>
+        <br><br>
+        <span id="err" style="color: red;"></span>
+    </form>
+</body>
+</html>
+<script>
+    document.getElementById("signup").onsubmit = function(event){
+        try{ 
+            var name = document.getElementById("nm").value
+            var number=document.getElementById("numb").value
+            var email=document.getElementById("eml").value
+            var pass=document.getElementById("pw").value
+            var confirm=document.getElementById("cpw").value
+
+            if(/\d/.test(name)){
+                throw new Error("Invalid name")
+            }
+            if(!/^\d{10}$/.test(number)){
+                throw new Error("Please enter valid mobile number")
+            }
+            if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)){
+                throw new Error("Please enter valid email")
+            }
+            if(pass!=confirm){
+                throw new Error("Password not matching")
+            }
+            alert("Detailed saved successfull")
+        }
+        catch(error){
+            event.preventDefault()
+            document.getElementById("err").innerText=error.message
+        }
+    }
+
+</script>
