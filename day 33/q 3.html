@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+class animal{
+    constructor(name,color,specification){
+        this.name = name
+        this.color = color
+        this.specification = specification
+    }
+}
+
+class wildanimal extends animal{
+    constructor(name,color,specification,weight){
+        super(name,color,specification)
+        this.weight = weight
+    }
+
+    spanimal(){
+        console.log(`Name = ${this.name},  Color = ${this.color},  Height = ${this.specification}, Weight = ${this.weight}`)       
+    }
+
+
+}
+const animal1=new animal("cow","mix","Full vegetrian")
+const animal2 = new wildanimal("Tiger","Yellow","we found white tiger also","250kg")
+const animal3 = new wildanimal("lion","orange type","The king of forest","300kg")
+
+animal1.spanimal()
+animal2.spanimal()
+</script>

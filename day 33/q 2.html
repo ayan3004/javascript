@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class person{
+        constructor(name,color,hobbies){
+            this.name=name
+           this.color=color
+           this.hobbies=hobbies
+        }
+    }
+
+    class anotherperson extends person{
+           constructor(name,color,hobbies,ability){
+            super(name,color,hobbies)
+            this.ability=ability
+           }
+            
+            anticperson(){
+                console.log(`a ${this.name} has ${this.ability}`)
+            }
+
+    }
+    const a1=new person("bhargav","blackish","singing")
+    const a2=new person("abhi","white","designing")
+    const a3=new anotherperson("Raj","blackish","reading","No mind")
+    const a4=new anotherperson("Deep","white","coading","high typing speed")
+
+    console.log(a1)
+    console.log(a2)
+    console.log(a3)
+    console.log(a4)
+    a3.anticperson()
+
+</script>

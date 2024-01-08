@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class car{
+        constructor(engincapicity,Range,color,brand){
+            this.engincapicity =engincapicity
+            this.Range=Range
+            this.color=color
+            this.brand=brand
+        }
+    }
+
+    class speedcar extends car{
+           constructor(engincapicity,Range,color,brand,price){
+            super(engincapicity,Range,color,brand)
+            this.price=price
+           }
+            
+            bugetcar(){
+                console.log(`This ${this.brand} price is ${this.price}`)
+            }
+
+    }
+    const a1=new car("500cc","Maximum 250kph","Black","Range rover")
+    const a2=new car("150cc","maximum150kph","gray","alto")
+    const a3=new speedcar("250cc","maximum550kph","red","ferrari",20000000)
+    const a4=new speedcar("150cc","maximum150kph","white","zen",150000)
+
+    console.log(a1)
+    console.log(a2)
+    console.log(a3)
+    console.log(a4)
+    a4.bugetcar()
+
+</script>
