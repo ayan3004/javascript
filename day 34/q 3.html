@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class food{
+        cook(){
+              
+        }
+    }
+    class pizza extends food{
+        cook(){
+            return "The cooking process of pizza is backing"
+        }
+    }
+    class burger extends food{
+        cook(){
+            return "The cooking process of burger is frying"
+        }
+    }
+    class sushi extends food{
+        cook(){
+            return "The cooking process of sushi is steaming"
+        }
+    }
+    const pizzacook=new pizza
+    const resultofc=pizzacook.cook()
+     const burgerc=new burger
+    const resultofr=burgerc.cook()
+    const sushis=new sushi
+    const resultofs=sushis.cook()
+    console.log(resultofc)
+    console.log(resultofr)
+    console.log(resultofs)
+    
+
+</script>
