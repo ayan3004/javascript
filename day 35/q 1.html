@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class shape{
+        draw(){
+            return "Drawing a shape"
+        }
+    }
+    class Circle extends shape{
+        draw(){
+            return "Drawing a circle"
+        }
+    }
+    class Square extends shape{
+        draw(){
+            return "Drawing a square"
+        }
+    }
+    const ds=new shape
+    const reds=ds.draw()
+    console.log(reds)
+    const dsc=new Circle
+    const redsc=dsc.draw()
+    console.log(redsc)
+    const dss=new Square
+    const redss=dss.draw()
+    console.log(redss)
+    
+</script>
