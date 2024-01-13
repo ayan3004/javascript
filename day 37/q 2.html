@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            background-color: black;
+            height: 100vh;
+            width: 100%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .submain{
+            width: 60%;
+            height: 350px;
+            background-color: aqua;
+
+        }
+        .h1{
+            margin-left: 25%;
+        }
+.subhi{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-evenly;
+
+}
+.subh{
+    flex-basis: 20%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+}
+h3{
+    text-transform: capitalize;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="submain">
+<h1 class="h1">OUR SALE ENDES IN :</h1>
+<div class="subhi">
+<div class="subh">
+    <h1>03</h1>
+    <h3>days</h3>
+</div>
+<div class="subh"><h1>16</h1>
+    <h3>hours</h3>
+</div>
+<div class="subh">
+    <h1>27</h1>
+    <h3>minute</h3>
+</div>
+<div class="subh">
+    <h1 id="countdown"></h1>
+    <h3>seconds</h3>
+</div>
+</div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     var countdown = document.getElementById("countdown")
+    var count = 60;
+    var stop;
+
+
+   stop = setInterval(()=>{
+        count--
+        countdown.innerHTML = count
+        if(count === 0){
+            
+            count=60
+        }
+    },1000)
+
+    // stop()
+
+</script>
