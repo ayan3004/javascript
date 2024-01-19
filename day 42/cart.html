@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cart{
+            display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#subdiv{
+    flex-basis: 30%;
+}
+
+        #photo{
+            height: 200px;
+            width: 200px;
+        }
+        #ph{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="cart"></div>
+</body>
+</html>
+<script>
+    let products = JSON.parse(localStorage.getItem("cart")) || []
+
+    function displaycart(){
+        products.map((el)=>{
+            let div = document.createElement("div")
+            div.setAttribute("id","subdiv")
+
+            let pict=document.createElement("img")
+     pict.setAttribute("src",el.image)
+     pict.setAttribute("id","photo")
+
+     let tit = document.createElement("h1")
+     tit.innerText=el.title
+
+     let pri = document.createElement("h1")
+     pri.innerText="$"+el.price
+
+     let dri = document.createElement("h5")
+     dri.innerText=el.description
+
+     let catg = document.createElement("h5")
+     catg.innerText=el.category
+      
+     let btn = document.createElement("button")
+     btn.innerText="CONFIRM ORDER"
+     btn.setAttribute("id","ph")
+
+
+
+     div.append(pict,tit,pri,dri,catg,btn)
+     document.getElementById("cart").append(div)
+        })
+    }
+    displaycart()
+</script>
