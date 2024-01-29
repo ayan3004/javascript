@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> 1 </title>
+	<style>
+	*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header{
+	height: 150vh;
+	width: 100%;
+	border: 2px solid black;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	background-image: linear-gradient(rgba(15,10,9,0.7),rgba(15,10,9,0.7)),url(img/bg.jpg);
+	background-position: center;
+	background-size: cover;
+}
+nav{
+	height: 100px;
+	width: 100%;
+	border: 2px solid black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo{
+	height: 100px;
+	width: 30%;
+	border: 2px solid black;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.logo img{
+	height: 100%;
+	width: 60%;
+}
+.navbar{
+	height: 100px;
+	width: 60%;
+	border: 2px solid black;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.lang{
+	height: 100px;
+	width: 50%;
+	border: 2px solid black;
+	display: flex;
+	align-items: center;
+}
+#select{
+	height: 50px;
+	width: 60%;
+	border: 6px double #fff;
+	font-size: 25px;
+	padding-left: 5%;
+	font-family: monospace;
+	margin-left: 35%;
+	border-radius: 10px 10px 10px 10px;
+	background: transparent;
+	color: #fff;
+}
+.btn{
+	height: 100px;
+	width: 50%;
+	border: 2px solid black;
+	display: flex;
+	align-items: center;
+}
+#btn-1{
+	height: 50px;
+	width: 35%;
+	border: 2px solid red;
+	background-color: red;
+	margin-left: 5%;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 10px 10px 10px 10px;
+}
+.search{
+	height: 300px;
+	width: 100%;
+	position: relative;
+}
+#inp{
+	height: 50px;
+	width: 40%;
+	position: absolute;
+	top: 80px;
+	right: 500px;
+	font-size: 20px;
+	padding-left: 2%;
+	font-family: monospace;
+	border-radius: 10px 10px 10px 10px;
+}
+#btn-2{
+	height: 50px;
+	width: 20%;
+	background-color: red;
+	color: #fff;
+	font-size: 20px;
+	font-family: monospace;
+	position: absolute;
+	top: 80px;
+	right: 230px;
+	border-radius: 10px 10px 10px 10px;
+}
+.image{
+	height: 600px;
+	width: 100%;
+	display: flex;
+	/* justify-content: space-evenly; */
+	align-items: center;
+	color: #fff;
+	font-family: monospace;
+	font-size: 20px;
+}
+.image img{
+	height: 100%;
+}
+	</style>
+</head>
+<body>
+	  <!-- 6f5a7192 -->
+	<header>
+		<nav>
+			<div class="logo">
+				<img src="img/logo.png">
+			</div>
+			<div class="navbar">
+				<div class="lang">
+					<select id="select">
+						<option style="color:#000">ENGLISH</option>
+						<option style="color:#000">HINDI</option>
+					</select>
+				</div>
+				<div class="btn">
+					<button id="btn-1">SIGN IN</button>
+				</div>
+			</div>
+		</nav>
+		<div class="search">
+			<input type="text" placeholder="Search Movie" id="inp">
+			<button id="btn-2" onclick="fatchdata()">SEARCH</button>
+		</div>
+		<div class="image">
+			
+		</div>
+	</header>
+</body>
+</html>
+<script>
+	
+	function fatchdata()
+	{
+		let name = document.getElementById("inp").value
+		let Api = "6f5a7192"
+		fetch(`http://www.omdbapi.com/?apikey=${Api}&t=${name}`)
+		.then(function(res){
+			return res.json()
+		})
+		.then(function(json){
+			console.log(json)
+			displayMovie(json)
+		})
+	}
+
+	function displayMovie(json)
+	{
+		let image = document.createElement("img")
+		image.setAttribute("src",json.Poster)
+
+		let title = document.createElement("h1")
+		title.innerHTML = json.Title
+
+		let actor = document.createElement("h3")
+		actor.innerHTML = json.Actors
+
+
+		document.querySelector(".image").append(image,title,actor)
+	}
+
+</script>
