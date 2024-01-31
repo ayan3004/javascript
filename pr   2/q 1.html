@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #name{
+            background-color: lime;
+            color: red;
+        }
+        #main{
+            /* margin-left: 60%; */
+            width: 100%;
+            background-color: green;
+            color: red;
+            height: 1000VH;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    
+    <div id="main">
+        <input type="text" id="name">
+    <button onclick="fatchdata()">search</button>
+    
+    </div>
+</center>
+</body>
+</html>
+<script>
+
+
+function fetchdata(){
+        document.getElementById("main").innerHTML=""
+        fetch("https://data.covid19india.org/v4/min/data.min.json")
+        .then(function(res){
+         return res.json()
+        })
+        .then(function(json){
+         console.log(json)
+         displayCovidData(json)
+        })
+    }
+    function displayCovidData(json){
+        let min = document.createElement("h1")
+        let max = document.createElement("h1")
+        let name=document.getElementById("name").value
+      for(i in json){
+            if(i == name){
+                
+                min.innerHTML ="Confirmed Cases = " +json[i].delta.confirmed
+                max.innerHTML="Total Confirmed Cases = "+json[i].total.confirmed
+            }
+      }  
+      document.querySelector("#main").append(min,max)
+    }
+
+
+
+
+
+
+
+</script>
