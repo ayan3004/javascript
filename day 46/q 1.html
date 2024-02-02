@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+</html>
+<script>
+  async function fetchdata(){
+    try{
+    let res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    let data = await res.json()
+    console.log(data)
+    displaydata(data)
+    }
+    catch(Error){
+        console.log(Error)
+    }
+  }
+  fetchdata()
+  function displaydata(json){
+json.map((el)=>{
+    let div = document.createElement('div')
+
+    let name = document.createElement("h1")
+    name.innerHTML="Body:-"+el.body
+
+    let nam = document.createElement("h1")
+    nam.innerHTML="Id:-"+el.id
+    let na = document.createElement("h1")
+    na.innerHTML="Title:-"+el.title
+    let n = document.createElement("h1")
+    n.innerHTML="User id:-"+el.userId
+
+
+
+
+
+    div.append(name,nam,na,n)
+    document.querySelector("#main").append(div)
+})
+  }
+</script>
