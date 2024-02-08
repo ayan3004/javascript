@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            width: 100%;
+        }
+        #photo{
+            margin-top: 30px;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    
+</body>
+</html>
+<script>
+    async function fetchdata(){
+      try{  let resp = await fetch('https://fakestoreapi.com/products')
+        let data = await resp.json()
+        console.log(data)
+        displaydata(data)
+    }
+    catch(Error){
+        console.log(Error)
+    }
+}
+
+    
+    fetchdata()
+    function displaydata(json){
+        json.map((el)=>{
+            let div = document.createElement('div')
+
+
+            let pic = document.createElement("img")
+            pic.setAttribute("src",el.image)
+            pic.setAttribute("id", "photo")
+
+            let name = document.createElement("h1")
+             name.innerHTML="Id : "+el.id
+
+            let catg = document.createElement("h3")
+            catg.innerHTML="category :"+el.category
+
+            let desp = document.createElement("h5")
+            desp.innerHTML="Description : "+el.description
+
+            let pri = document.createElement("h3")
+            pri.innerHTML="Price :"+el.price
+            
+            let rat = document.createElement("h3")
+            rat.innerHTML="rating count :"+el.rating.count
+
+            let rate = document.createElement("h3")
+            rate.innerHTML="rating  :"+el.rating.rate
+            
+            let tit = document.createElement("h2")
+            tit.innerHTML="Title : "+el.title
+
+
+             div.append(pic,name,catg,desp,pri,rat,rate,tit)
+    document.querySelector("#main").append(div)
+
+ })
+    }
+</script>
