@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .main{
+            width: 100%;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+        }
+
+        .man-1{
+            width: 30%;
+            height: inherit;
+            /* border: 1px solid black; */
+        }
+        .man-2{
+            width: 30%;
+            height: inherit;
+            /* border: 1px solid black; */
+        }
+        .man-2 ul{
+            list-style: none;
+        }
+
+        #butt-1{
+            color: white;
+            background-color: green;
+            border: none;
+        }
+        #butt-2{
+            color: white;
+            background-color: red;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="man-1">
+
+    <center>
+        <h1>Recipe Book</h1> <br>
+
+        <form id="recipeform">
+            <label for="">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="">Ingredients:</label>
+            <textarea name="" id="ingredients" required></textarea><br><br>
+
+            <label for="">Instructions:</label>
+            <textarea name="" id="instructions" required></textarea><br><br>
+
+            <label for="">Cuisine Type:</label>
+            <select name="" id="cuisine" required>
+            <option value="American">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Chinese">Chinese</option>
+            </select><br><br>
+
+            <button type="submit">Add Recipe</button>
+        </form>
+    </center>
+</div>
+
+<div class="man-2">
+    <center>
+        <h3>FILTER:</h3>
+        <select name="filter" id="filter">
+            <option value="all">All</option>
+            <option value="American">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Chinese">Chinese</option>
+            </select><br><br>
+        <ul id="recipeadd"></ul>
+    </center>
+</div>
+
+</div>
+    
+</body>
+</html>
+
+<script>
+    let recipeform = document.getElementById("recipeform")
+
+    recipeform.addEventListener("submit",function(event){
+        event.preventDefault()
+
+        let title = document.getElementById("title").value 
+        let ingredients = document.getElementById("ingredients").value
+        let instructions = document.getElementById("instructions").value
+        let cuisine = document.getElementById("cuisine").value
+
+
+        let ty = {
+            id:Date.now(),
+            title,
+            ingredients,
+            instructions,
+            cuisine
+        }
+
+        let book=JSON.parse(localStorage.getItem("dk")) || []
+        book.push(ty)
+
+        localStorage.setItem("dk",JSON.stringify(book))
+        console.log(book)
+        preparation()
+
+
+    })
+
+    function preparation(){
+        let book=JSON.parse(localStorage.getItem("dk")) || []
+        recipeadd = document.getElementById("recipeadd")
+        recipeadd.innerHTML=""
+
+        book.map((el)=>{
+            let cot = document.createElement("li")
+
+            cot.innerHTML=`
+
+            <b>${el.title}</b> 
+                <p>${el.ingredients}</p>
+                <p>${el.instructions}</p> 
+                <p>${el.cuisine}</p>
+                <button id="butt-1" onclick="editrecipe(${el.id})">edit</button>
+                <button id="butt-2" onclick="deletingrecipe(${el.id})">delete</button>
+            `
+            recipeadd.appendChild(cot)
+        })
+
+    }
+
+    function editrecipe(id){
+        let book=JSON.parse(localStorage.getItem("dk")) || []
+
+        let edit = book.find(recipe=>recipe.id == id)
+
+        if(edit){
+            let newtitle=prompt("enter new title",edit.title)
+            if(newtitle !== null){
+            edit.title=newtitle
+            localStorage.setItem("dk",JSON.stringify(book))
+            preparation()
+            }
+
+           
+        }
+        console.log(id)
+    }
+    preparation()
+
+    function deletingrecipe(id){
+        
+        let book=JSON.parse(localStorage.getItem("dk")) || []
+        book.map((el,i)=>{
+            if(el.id==id){
+                book.splice(i,1)
+                localStorage.setItem("dk",JSON.stringify(book))
+                preparation()
+            }
+        })
+    }
+
+    let filter=document.getElementById("filter")
+
+    filter.addEventListener("change",()=>{
+        
+    let book=JSON.parse(localStorage.getItem("dk")) || []
+
+if(filter.value== "all"){
+    preparation(book)
+}else{
+    let filterrecipe=book.filter((el)=>{
+        return el.cuisine == filter.value
+    })
+
+    console.log(filterrecipe)
+    preparation(filterrecipe)
+}
+    })
+
+    
+    
+    window.onload = function (){
+        preparation();
+    }
+</script>
+
+
+
+
+
+
+
+
